@@ -12,12 +12,12 @@ then
     groupmod --gid $PGID mosquitto
 fi
 
-if [ -d /mosquitto ]
+if [ ! -d /mosquitto ]
 then
     mkdir -p /mosquitto/{data,log,config}
 fi
 
-if [ -d /mosquitto/config/conf.d ]
+if [ ! -d /mosquitto/config/conf.d ]
 then
     mkdir -p /mosquitto/config/conf.d
 fi
