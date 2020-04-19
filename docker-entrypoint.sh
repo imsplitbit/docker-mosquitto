@@ -15,11 +15,15 @@ fi
 if [ ! -d /mosquitto ]
 then
     mkdir -p /mosquitto/{data,log,config}
+    chowm mosquitto:mosquitto /mosquitto/data
+    chown mosquitto:mosquitto /mosquitto/log
+    chown mosquitto:mosquitto /mosquitto/config
 fi
 
 if [ ! -d /mosquitto/config/conf.d ]
 then
     mkdir -p /mosquitto/config/conf.d
+    chown mosquitto:mosquitto /mosquitto/config/conf.d
 fi
 
 # chown -R mosquitto:mosquitto /mosquitto
