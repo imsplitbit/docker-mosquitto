@@ -26,7 +26,7 @@ fi
 
 if [ ! -e /mosquitto/config/mosquitto.conf ]
 then
-    tee /mosquitto/config/mosquitto.conf <<EOF
+    sudo -u mosquitto -g mosquitto tee /mosquitto/config/mosquitto.conf <<EOF
 # Place your local configuration in /mqtt/config/conf.d/
 
 pid_file /var/run/mosquitto.pid
